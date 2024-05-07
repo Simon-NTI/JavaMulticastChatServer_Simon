@@ -18,7 +18,8 @@ public class MulticastChatServer_Simon {
         System.out.println("MulticastSocket is created at port " + portnumber);
 
         // Determine the IP address of a host, given the host name
-        InetAddress group = InetAddress.getByName("22.4.5.6");
+        // The address range for multicast on a local subnetwork is 244.0.0.0 to 244.0.0.255
+        InetAddress group = InetAddress.getByName("224.0.0.1");
 
         serverMulticastSocket.joinGroup(group);
         System.out.println("joinGroup method was called...");
